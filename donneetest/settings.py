@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,12 +95,14 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "bount_donnees",
-        "USER": "postgres",
-        "PASSWORD": "rootsma",
-        "HOST": "localhost",  
+        "USER": "bount_donnees_user",
+        "PASSWORD": "Hraad0e1Pk1Hu94sWoXUbsV34ACOKbt4",
+        "HOST": "dpg-cuhmoedds78s73f01gqg-a",  
         "PORT": "5432",  
     }
 }
+
+DATABASES['default'] = dj_database_url.parse("postgresql://bount_donnees_user:Hraad0e1Pk1Hu94sWoXUbsV34ACOKbt4@dpg-cuhmoedds78s73f01gqg-a.oregon-postgres.render.com/bount_donnees")
 
 
 
